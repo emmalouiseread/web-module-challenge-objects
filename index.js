@@ -57,11 +57,11 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  discount: function (str) {
-    if (str === "teacher") {
-      return this.price - 0.55;
-    } else if (str === "military") {
-      return this.price - 1.22;
+  discount : function(str) {
+    if (str === "teacher" || str === "student") {
+      return this.price - this.price * 0.25;
+    } else if (str === "public") {
+      return this.price - this.price * 0.90;
     }
   }
 }
@@ -169,11 +169,6 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
-  }
-
-  
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
   1. Receive the array that holds all the reviews
@@ -186,10 +181,6 @@ Use the getLongReviews function below to do the following:
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }
   ]
 */
-
-function getLongReviews(/* code here */) {
-    /* code here */
-  }
   
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
@@ -210,9 +201,14 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
-    
+function carMaker(originalMiles) { // originalMiles = amount it's already been driven
+  const car = {
+    odometer : originalMiles,
+    drive : function(newMiles) {
+      this.odometer += newMiles;
+    }
+  }
+  return car;
 }
 
 
