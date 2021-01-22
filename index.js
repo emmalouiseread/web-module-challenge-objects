@@ -57,13 +57,13 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  burger.prototype.discount = function (str) {
+  discount: function (str) {
     if (str === "teacher") {
-      return price - 0.55;
+      return this.price - 0.55;
     } else if (str === "military") {
-      return price - 1.22;
+      return this.price - 1.22;
     }
-  };
+  }
 }
 
 
